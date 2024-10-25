@@ -27,6 +27,9 @@ body {
 }
 
 .main-part {
+    /*for mobile devices*/
+    margin-top: 50px;
+    
     gap: 80px;
 }
 
@@ -206,6 +209,8 @@ body {
 
 @media (min-width: 900px) {
     .main-part {
+        margin-top: 0;
+
         display: flex;
         justify-content: center;
         align-items: center;
