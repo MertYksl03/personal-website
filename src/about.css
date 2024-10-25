@@ -75,14 +75,15 @@ body {
 }
 
 .top-part img {
-    height: 350px;
-    width: 350px;
+    /*for mobile devices */
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     border: none;
 }
 
 .top-part h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin-top: 10px;
     margin-bottom: 5px;
     text-align: center;
@@ -95,12 +96,12 @@ body {
 }
 
 .about h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     text-align: center;
 }
 
 .about p{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: left;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -140,7 +141,8 @@ body {
 
 .social-media li {
     display: flex;
-    margin: 0 80px;
+    /*for mobile devices*/
+    margin: 0 40px;
 }
 
 .social-media-buttons {
@@ -149,12 +151,31 @@ body {
 }
 
 .social-media-buttons img{
-    width: 90px;
-    height: 90px;
+    /*for mobile devices */
+    width: 60px;
+    height: 60px;
     border-radius: 0;
     opacity: 0.5;
 }
 
 .social-media-buttons img:hover {
     opacity: 1;
+}
+
+
+@media (min-width: 900px) {
+    .top-part img {
+        height: 350px;
+        width: 350px;
+    }
+
+
+    .social-media li {
+        margin: 0 80px;
+    }
+
+    .social-media-buttons img {
+        width: 90px;
+        height: 90px;
+    }
 }
