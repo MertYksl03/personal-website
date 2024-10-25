@@ -209,6 +209,7 @@ body {
 
 @media (min-width: 900px) {
     .main-part {
+        margin-top: 0;
         display: flex;
         justify-content: center;
         align-items: center;
