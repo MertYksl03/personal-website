@@ -1,0 +1,239 @@
+
+body {
+    background-color: rgb(15, 23, 42);
+    color: white;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+
+::selection {
+    color: rgb(19 78 74);
+    background: rgb(94 234 212 );
+}
+
+.overlay {
+    background-color: rgb(15, 23, 42)  transparent 90%; /* semi-transparent overlay */
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.no-overlay {
+    position: relative;
+    z-index: 101; /* ensure the element is above the overlay */
+}
+
+.main-part {
+    gap: 80px;
+}
+
+.left-part {
+    display: fixed;
+    /* flex-direction: column;*/
+    justify-content: center; 
+    align-items: center;
+    /* margin-right: 20%; */
+}
+
+.left-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-top h1 h2{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.left-top h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.left-top img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.left-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-bottom ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* list-style-type: none;  Removes the list symbol for all list elements*/
+    margin: 0;
+    padding: 0;
+}
+
+.left-bottom li {
+    display: flex;
+    margin-right: 10px;
+}
+
+.left-part-buttons {
+    background-color: transparent;
+    border: none;
+
+}
+
+.left-part-buttons img{
+    /*for mobile devices*/
+    width: 45px;
+    height: 45px;
+    border-radius: 0;
+    opacity: 0.5;
+}
+
+.left-part-buttons img:hover {
+    opacity: 1;
+    
+}
+.right-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-part-buttons{
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.right-top {
+    margin-bottom: 10px;
+    /*for mobile devices*/
+    text-align: center;
+    font-size: 3.2rem;
+}
+
+.right-top p {
+    /*for mobile devices*/
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 10px;
+} 
+
+
+.right-part-buttons:hover {
+    color: rgb(94 234 212 );
+}
+
+.animated-text{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.animated-text span {
+    position: relative;
+}
+
+.animated-text span::before {
+    content: "Student";
+    color: rgb(94, 234, 212);
+    animation: words 20s infinite;
+}
+
+.animated-text span::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: rgb(15, 23, 42);
+    /* border-right: 2px solid rgb(94, 234, 212); */
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid rgb(15, 23, 42);
+    }
+}
+
+@keyframes words {
+    0%, 20%{
+        content: "Student";
+    }
+    21%, 40%{
+        content: "Web Developer";
+    }
+    41%, 60%{
+        content: "Software Developer";
+    }
+    61%, 80%{
+        content: "Game Developer";
+    }
+    81%, 100%{
+        content: "Human Being";
+    }
+
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    } 
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 100% {
+        width: calc(100% + 8px);
+    }
+}
+
+@media (min-width: 900px) {
+    .main-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-right: 150px;
+        margin-left: 150px;
+    }
+
+    .animated-text {
+        text-align: left;
+        font-size: 2rem;
+    }
+    
+    .right-top p {
+        font-size: 1.2rem;
+        text-align: left;
+        margin-bottom: 10px;
+    } 
+
+    .right-top {
+        text-align: left;
+        font-size: 2.8rem;
+    }
+
+    .left-part-buttons img{
+        width: 30px;
+        height: 30px;
+        border-radius: 0;
+        opacity: 0.5;
+    }
+}
